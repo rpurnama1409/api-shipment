@@ -43,6 +43,22 @@ app.get("/shipment/list", (req, res) => {
   });
 });
 
+app.get("/shipment/status", (req, res) => {
+  // buat query sql
+  const querySql = "SELECT id,status FROM dat_orders";
+
+  // jalankan query
+  koneksi.query(querySql, (err, rows, field) => {
+    // error handling
+    if (err) {
+      return res.status(500).json({ message: "Item not found", error: err });
+    }
+
+    // jika request berhasil
+    res.status(200).json({ success: true, data: rows });
+  });
+});
+
 // update data
 app.put("/shipment/:id", (req, res) => {
   // buat variabel penampung data dan query sql
