@@ -1,0 +1,16 @@
+{
+  "name": "api-shipment",
+  "version": "1.0.0",
+  "description": "Api service for data shipment",
+  "main": "index.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "author": "Randy",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0",
+    "mysql": "^2.18.1"
+  }
+}
