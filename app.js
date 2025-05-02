@@ -27,7 +27,7 @@ app.post("/shipment", (req, res) => {
 });
 
 // read data
-app.get("/shipment-list", (req, res) => {
+app.get("/shipment/list", (req, res) => {
   // buat query sql
   const querySql = "SELECT * FROM dat_orders";
 
