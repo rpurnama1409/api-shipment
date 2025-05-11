@@ -3,6 +3,9 @@ const bodyParser = require("body-parser");
 const koneksi = require("./config/database");
 const app = express();
 const PORT = process.env.PORT || 8000;
+const cors = require("cors");
+
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -153,7 +156,6 @@ app.post("/shipment/:id/history", (req, res) => {
     order_id: orderId,
     description,
     time: new Date(time), // pastikan time bisa dikonversi ke objek Date
-    image: image || null,
   };
 
   const querySql = "INSERT INTO dat_order_logs SET ?";
